@@ -33,7 +33,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import bzh.zomzog.world.domain.enumeration.Role;
-import bzh.zomzog.world.domain.enumeration.Techno;
 
 /**
  * Test class for the ProjectResource REST controller.
@@ -54,9 +53,6 @@ public class ProjectResourceIntTest {
     
     private static final Role DEFAULT_ROLE = Role.Dev;
     private static final Role UPDATED_ROLE = Role.LeadDev;
-    
-    private static final Techno DEFAULT_TECHNOS = Techno.Java;
-    private static final Techno UPDATED_TECHNOS = Techno.AngularJs;
     private static final String DEFAULT_DESCRIPTION = "AAAAA";
     private static final String UPDATED_DESCRIPTION = "BBBBB";
 
@@ -96,7 +92,6 @@ public class ProjectResourceIntTest {
         project.setClient(DEFAULT_CLIENT);
         project.setTeamSize(DEFAULT_TEAM_SIZE);
         project.setRole(DEFAULT_ROLE);
-        project.setTechnos(DEFAULT_TECHNOS);
         project.setDescription(DEFAULT_DESCRIPTION);
     }
 
@@ -120,7 +115,6 @@ public class ProjectResourceIntTest {
         assertThat(testProject.getClient()).isEqualTo(DEFAULT_CLIENT);
         assertThat(testProject.getTeamSize()).isEqualTo(DEFAULT_TEAM_SIZE);
         assertThat(testProject.getRole()).isEqualTo(DEFAULT_ROLE);
-        assertThat(testProject.getTechnos()).isEqualTo(DEFAULT_TECHNOS);
         assertThat(testProject.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
     }
 
@@ -195,7 +189,6 @@ public class ProjectResourceIntTest {
                 .andExpect(jsonPath("$.[*].client").value(hasItem(DEFAULT_CLIENT.toString())))
                 .andExpect(jsonPath("$.[*].teamSize").value(hasItem(DEFAULT_TEAM_SIZE)))
                 .andExpect(jsonPath("$.[*].role").value(hasItem(DEFAULT_ROLE.toString())))
-                .andExpect(jsonPath("$.[*].technos").value(hasItem(DEFAULT_TECHNOS.toString())))
                 .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())));
     }
 
@@ -213,7 +206,6 @@ public class ProjectResourceIntTest {
             .andExpect(jsonPath("$.client").value(DEFAULT_CLIENT.toString()))
             .andExpect(jsonPath("$.teamSize").value(DEFAULT_TEAM_SIZE))
             .andExpect(jsonPath("$.role").value(DEFAULT_ROLE.toString()))
-            .andExpect(jsonPath("$.technos").value(DEFAULT_TECHNOS.toString()))
             .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()));
     }
 
@@ -237,7 +229,6 @@ public class ProjectResourceIntTest {
         project.setClient(UPDATED_CLIENT);
         project.setTeamSize(UPDATED_TEAM_SIZE);
         project.setRole(UPDATED_ROLE);
-        project.setTechnos(UPDATED_TECHNOS);
         project.setDescription(UPDATED_DESCRIPTION);
         ProjectDTO projectDTO = projectMapper.projectToProjectDTO(project);
 
@@ -253,7 +244,6 @@ public class ProjectResourceIntTest {
         assertThat(testProject.getClient()).isEqualTo(UPDATED_CLIENT);
         assertThat(testProject.getTeamSize()).isEqualTo(UPDATED_TEAM_SIZE);
         assertThat(testProject.getRole()).isEqualTo(UPDATED_ROLE);
-        assertThat(testProject.getTechnos()).isEqualTo(UPDATED_TECHNOS);
         assertThat(testProject.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
     }
 

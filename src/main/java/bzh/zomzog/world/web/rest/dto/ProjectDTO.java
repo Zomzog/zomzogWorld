@@ -7,7 +7,6 @@ import java.util.Set;
 import java.util.Objects;
 
 import bzh.zomzog.world.domain.enumeration.Role;
-import bzh.zomzog.world.domain.enumeration.Techno;
 
 /**
  * A DTO for the Project entity.
@@ -28,9 +27,6 @@ public class ProjectDTO implements Serializable {
 
     @NotNull
     private Role role;
-
-
-    private Techno technos;
 
 
     @Size(max = 2048)
@@ -67,13 +63,6 @@ public class ProjectDTO implements Serializable {
 
     public void setRole(Role role) {
         this.role = role;
-    }
-    public Techno getTechnos() {
-        return technos;
-    }
-
-    public void setTechnos(Techno technos) {
-        this.technos = technos;
     }
     public String getDescription() {
         return description;
@@ -126,7 +115,6 @@ public class ProjectDTO implements Serializable {
             ", client='" + client + "'" +
             ", teamSize='" + teamSize + "'" +
             ", role='" + role + "'" +
-            ", technos='" + technos + "'" +
             ", description='" + description + "'" +
             '}';
     }

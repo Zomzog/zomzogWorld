@@ -2,12 +2,12 @@ language: node_js
 node_js:
   - "0.12"
 sudo: false
-before_install: npm install -g gulp
+before_install: npm install -g grunt-cli
 install: npm install
 before_script: 
   - npm install -g bower
   - bower install -f
-  - gulp build
+  - grunt build
 notifications:
   webhooks:
     on_success: change  # options: [always|never|change] default: always

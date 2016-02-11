@@ -22,7 +22,6 @@
                     <th jh-sort-by="client"><span translate="zomzogworldApp.project.client">Client</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="teamSize"><span translate="zomzogworldApp.project.teamSize">TeamSize</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="role"><span translate="zomzogworldApp.project.role">Role</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="technos"><span translate="zomzogworldApp.project.technos">Technos</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="description"><span translate="zomzogworldApp.project.description">Description</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="societyId"><span translate="zomzogworldApp.project.society">society</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
@@ -34,7 +33,6 @@
                     <td>{{project.client}}</td>
                     <td>{{project.teamSize}}</td>
                     <td translate="{{'zomzogworldApp.Role.' + project.role}}">{{project.role}}</td>
-                    <td translate="{{'zomzogworldApp.Techno.' + project.technos}}">{{project.technos}}</td>
                     <td>{{project.description}}</td>
                     <td>
                         <a ui-sref="society.detail({id:project.societyId})">{{project.societyId}}</a>

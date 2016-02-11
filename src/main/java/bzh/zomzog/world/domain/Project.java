@@ -12,8 +12,6 @@ import java.util.Objects;
 
 import bzh.zomzog.world.domain.enumeration.Role;
 
-import bzh.zomzog.world.domain.enumeration.Techno;
-
 /**
  * A Project.
  */
@@ -40,10 +38,6 @@ public class Project implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false)
     private Role role;
-    
-    @Enumerated(EnumType.STRING)
-    @Column(name = "technos")
-    private Techno technos;
     
     @Size(max = 2048)
     @Column(name = "description", length = 2048)
@@ -90,14 +84,6 @@ public class Project implements Serializable {
     
     public void setRole(Role role) {
         this.role = role;
-    }
-
-    public Techno getTechnos() {
-        return technos;
-    }
-    
-    public void setTechnos(Techno technos) {
-        this.technos = technos;
     }
 
     public String getDescription() {
@@ -151,7 +137,6 @@ public class Project implements Serializable {
             ", client='" + client + "'" +
             ", teamSize='" + teamSize + "'" +
             ", role='" + role + "'" +
-            ", technos='" + technos + "'" +
             ", description='" + description + "'" +
             '}';
     }

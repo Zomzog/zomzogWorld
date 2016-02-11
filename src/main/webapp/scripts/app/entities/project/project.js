@@ -20,7 +20,6 @@ angular.module('zomzogworldApp')
                     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                         $translatePartialLoader.addPart('project');
                         $translatePartialLoader.addPart('role');
-                        $translatePartialLoader.addPart('techno');
                         $translatePartialLoader.addPart('global');
                         return $translate.refresh();
                     }]
@@ -43,7 +42,6 @@ angular.module('zomzogworldApp')
                     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                         $translatePartialLoader.addPart('project');
                         $translatePartialLoader.addPart('role');
-                        $translatePartialLoader.addPart('techno');
                         return $translate.refresh();
                     }],
                     entity: ['$stateParams', 'Project', function($stateParams, Project) {
@@ -68,7 +66,6 @@ angular.module('zomzogworldApp')
                                     client: null,
                                     teamSize: null,
                                     role: null,
-                                    technos: null,
                                     description: null,
                                     id: null
                                 };

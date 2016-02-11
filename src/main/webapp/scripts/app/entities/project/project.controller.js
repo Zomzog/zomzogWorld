@@ -37,7 +37,6 @@ angular.module('zomzogworldApp')
                 client: null,
                 teamSize: null,
                 role: null,
-                technos: null,
                 description: null,
                 id: null
             };
