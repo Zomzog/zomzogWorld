@@ -1,0 +1,9 @@
+{
+    "zomzogworldApp": {
+        "Role" : {
+            "null": "",
+            "Dev": "Dev",
+            "LeadDev": "LeadDev"
+        }
+    }
+}

@@ -1,0 +1,111 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myProjectLabel" translate="zomzogworldApp.project.home.createOrEditLabel">Create or edit a Project</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="project.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="zomzogworldApp.project.client" for="field_client">Client</label>
+            <input type="text" class="form-control" name="client" id="field_client"
+                    ng-model="project.client"
+                    required ng-minlength="1" ng-maxlength="254" />
+            <div ng-show="editForm.client.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.client.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.client.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.client.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="254">
+                    This field cannot be longer than 254 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="zomzogworldApp.project.teamSize" for="field_teamSize">TeamSize</label>
+            <input type="number" class="form-control" name="teamSize" id="field_teamSize"
+                    ng-model="project.teamSize"
+                    required min="1" />
+            <div ng-show="editForm.teamSize.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.teamSize.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.teamSize.$error.min" translate="entity.validation.min" translate-value-min="1">
+                    This field should be more than 1.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.teamSize.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="zomzogworldApp.project.role" for="field_role">Role</label>
+            <select class="form-control" name="role" ng-model="project.role" id="field_role" required>
+                <option value="Dev" translate="zomzogworldApp.Role.Dev">Dev</option>
+                <option value="LeadDev" translate="zomzogworldApp.Role.LeadDev">LeadDev</option>
+            </select>
+            <div ng-show="editForm.role.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.role.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="zomzogworldApp.project.technos" for="field_technos">Technos</label>
+            <select class="form-control" name="technos" ng-model="project.technos" id="field_technos">
+                <option value="Java" translate="zomzogworldApp.Techno.Java">Java</option>
+                <option value="AngularJs" translate="zomzogworldApp.Techno.AngularJs">AngularJs</option>
+                <option value="Springboot" translate="zomzogworldApp.Techno.Springboot">Springboot</option>
+                <option value="GWT" translate="zomzogworldApp.Techno.GWT">GWT</option>
+                <option value="WindowsPhone" translate="zomzogworldApp.Techno.WindowsPhone">WindowsPhone</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="zomzogworldApp.project.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="project.description"
+                    ng-maxlength="2048" />
+            <div ng-show="editForm.description.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.description.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="2048">
+                    This field cannot be longer than 2048 characters.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="zomzogworldApp.project.society" for="field_society">society</label>
+            <select class="form-control" id="field_society" name="society" ng-model="project.societyId" ng-options="society.id as society.id for society in societys">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="zomzogworldApp.project.technologie" for="field_technologie">technologie</label>
+            <select class="form-control" id="field_technologie" multiple name="technologie" ng-model="project.technologies" ng-options="technology as technology.name for technology in technologys track by technology.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,25 @@
+{
+    "zomzogworldApp": {
+        "society" : {
+            "home": {
+                "title": "Societys",
+                "createLabel": "Create a new Society",
+                "createOrEditLabel": "Create or edit a Society",
+                "search": "Search for Society"
+            },
+            "created": "A new Society is created with identifier {{ param }}",
+            "updated": "A Society is updated with identifier {{ param }}",
+            "deleted": "A Society is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Society {{ id }}?"
+            },
+            "detail": {
+                "title": "Society"
+            },
+            "name": "Name",
+            "enter": "Enter",
+            "quit": "Quit",
+            "project": "Project"
+        }
+    }
+}

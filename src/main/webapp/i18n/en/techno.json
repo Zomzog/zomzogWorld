@@ -1,0 +1,12 @@
+{
+    "zomzogworldApp": {
+        "Techno" : {
+            "null": "",
+            "Java": "Java",
+            "AngularJs": "AngularJs",
+            "Springboot": "Springboot",
+            "GWT": "GWT",
+            "WindowsPhone": "WindowsPhone"
+        }
+    }
+}

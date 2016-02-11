@@ -1,0 +1,68 @@
+<div>
+    <h2 translate="zomzogworldApp.project.home.title">Projects</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="project.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                        translate="zomzogworldApp.project.home.createLabel">Create new Project
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="reset()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="client"><span translate="zomzogworldApp.project.client">Client</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="teamSize"><span translate="zomzogworldApp.project.teamSize">TeamSize</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="role"><span translate="zomzogworldApp.project.role">Role</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="technos"><span translate="zomzogworldApp.project.technos">Technos</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="description"><span translate="zomzogworldApp.project.description">Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="societyId"><span translate="zomzogworldApp.project.society">society</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                <tr ng-repeat="project in projects track by project.id">
+                    <td><a ui-sref="project.detail({id:project.id})">{{project.id}}</a></td>
+                    <td>{{project.client}}</td>
+                    <td>{{project.teamSize}}</td>
+                    <td translate="{{'zomzogworldApp.Role.' + project.role}}">{{project.role}}</td>
+                    <td translate="{{'zomzogworldApp.Techno.' + project.technos}}">{{project.technos}}</td>
+                    <td>{{project.description}}</td>
+                    <td>
+                        <a ui-sref="society.detail({id:project.societyId})">{{project.societyId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="project.detail({id:project.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="project.edit({id:project.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="project.delete({id:project.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

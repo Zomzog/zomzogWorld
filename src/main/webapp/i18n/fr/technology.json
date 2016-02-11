@@ -1,0 +1,23 @@
+{
+    "zomzogworldApp": {
+        "technology" : {
+            "home": {
+                "title": "Technologys",
+                "createLabel": "Créer un nouveau Technology",
+                "createOrEditLabel": "Créer ou éditer un Technology",
+                "search": "Search for Technology"
+            },
+            "created": "Un nouveau Technology a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Technology avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Technology avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Technology {{ id }} ?"
+            },
+            "detail": {
+                "title": "Technology"
+            },
+            "name": "Name"
+        }
+    }
+}
+

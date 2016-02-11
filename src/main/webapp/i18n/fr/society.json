@@ -1,0 +1,26 @@
+{
+    "zomzogworldApp": {
+        "society" : {
+            "home": {
+                "title": "Societys",
+                "createLabel": "Créer un nouveau Society",
+                "createOrEditLabel": "Créer ou éditer un Society",
+                "search": "Search for Society"
+            },
+            "created": "Un nouveau Society a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Society avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Society avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Society {{ id }} ?"
+            },
+            "detail": {
+                "title": "Society"
+            },
+            "name": "Name",
+            "enter": "Enter",
+            "quit": "Quit",
+            "project": "Project"
+        }
+    }
+}
+

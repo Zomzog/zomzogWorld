@@ -1,0 +1,26 @@
+{
+  "generator-jhipster": {
+    "baseName": "zomzogWorld",
+    "packageName": "bzh.zomzog.world",
+    "packageFolder": "bzh/zomzog/world",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "no",
+    "useSass": true,
+    "buildTool": "gradle",
+    "frontendBuilder": "gulp",
+    "enableTranslation": true,
+    "enableSocialSignIn": true,
+    "rememberMeKey": "a98f211dd5b721311908671666fc52ea33f8a59d",
+    "testFrameworks": [
+      "gatling",
+      "cucumber",
+      "protractor"
+    ]
+  }
+}

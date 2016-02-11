@@ -1,0 +1,65 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "society",
+            "otherEntityName": "society",
+            "relationshipType": "many-to-one",
+            "otherEntityRelationshipName": "project"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "technologie",
+            "otherEntityName": "technology",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "name",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "client",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesMaxlength": "254"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "teamSize",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": "1"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "role",
+            "fieldType": "Role",
+            "fieldValues": "Dev,LeadDev",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "2048"
+        }
+    ],
+    "changelogDate": "20160131213213",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "pagination": "infinite-scroll"
+}
