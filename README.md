@@ -1,4 +1,4 @@
-# zomzogWorld
+# Zomzog World
 It's my world ! Poc project
 
 [![Build Status](https://travis-ci.org/Zomzog/zomzogWorld.svg)](https://travis-ci.org/Zomzog/zomzogWorld)
